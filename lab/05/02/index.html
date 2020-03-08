@@ -1,0 +1,100 @@
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+</head>
+
+<script>
+    // Samples
+    const starters = ['Salad', 'Fish soup', 'Salmon tartare', 'Broccoli tempura'];
+    const mainCourses = ['Burger and fries', 'Lasagna', 'Macaroni and cheese', 'Spicy pork with apples'];
+    const desserts = ['Vanilla ice cream', 'Pancakes with maple syrup', 'Pineapple pie'];
+
+    // Select a random item in an array
+    function random(array) {
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
+    // This function calls the callback with success after 1s
+    function deferredResult(result, callback) {
+        setTimeout(() => callback(undefined, result), 1000);
+    }
+
+    // This function calls the callback with error after 1s
+    function deferredError(error, callback) {
+        setTimeout(() => callback(error), 1000);
+    }
+
+    // Select a random starter
+    function selectStarter(menu, callback) {
+        switch (menu) {
+            case 'MAXI':
+                deferredResult(random(starters), callback);
+                break;
+            default:
+                deferredError(new Error('Your menu does not include a starter'), callback);
+        }
+    }
+
+    // Select a random main course
+    function selectMainCourse(menu, callback) {
+        deferredResult(random(mainCourses), callback);
+    }
+
+    // Select a random dessert
+    function selectDessert(menu, callback) {
+        switch (menu) {
+            case 'STANDARD':
+            case 'MAXI':
+                deferredResult(random(desserts), callback);
+                break;
+            default:
+                deferredError(new Error('Your menu does not include a dessert'), callback);
+        }
+    }
+
+    function serveMenu(menu) {
+        const meal = {};
+        selectStarter(menu, (err, starter) => {
+            if (err) {
+                meal.starter = err.message;
+            } else {
+                meal.starter = starter;
+            }
+            console.log(`Starter     => ${meal.starter}`);
+
+            selectMainCourse(menu, (err, mainCourse) => {
+                if (err) {
+                    meal.mainCourse = err.message;
+                } else {
+                    meal.mainCourse = mainCourse;
+                }
+                console.log(`Main course => ${meal.mainCourse}`);
+
+                selectDessert(menu, (err, dessert) => {
+                    if (err) {
+                        meal.dessert = err.message;
+                    } else {
+                        meal.dessert = dessert;
+                    }
+                    console.log(`Dessert     => ${meal.dessert}`);
+                });
+            });
+        })
+    }
+</script>
+
+<body>
+
+    <h2>Lab 05/02</h2>
+
+    <button onclick="serveMenu('MINI')">Menu MINI</button>
+    <br /><br />
+    <button onclick="serveMenu('STANDARD')">Menu STANDARD</button>
+    <br /><br />
+    <button onclick="serveMenu('MAXI')">Menu MAXI</button>
+</body>
+
+</html>

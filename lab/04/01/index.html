@@ -1,0 +1,110 @@
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <script>
+        function initForm() {
+
+        }
+    </script>
+
+</head>
+
+<body onload="initForm()">
+
+    <h2>Lab 04/01</h2>
+    <form id="carForm">
+        <fieldset id="fieldset1">
+            <legend>Etape 1 : Choisissez une marque</legend>
+            <select id="makeSelect"></select>
+        </fieldset>
+
+        <fieldset id="fieldset2">
+            <legend>Etape 2 : Choisissez un modèle</legend>
+            <select id="modelSelect"></select>
+        </fieldset>
+
+        <fieldset id="fieldset3">
+            <legend>Etape 3 : Choisissez une couleur</legend>
+            <select id="colorSelect"></select>
+        </fieldset>
+
+        <fieldset id="fieldset4">
+            <legend>Etape 4 : Choisissez une option</legend>
+            <label for="clim">Climatisation</label>
+            <input id="clim" name="options" type="checkbox" value="Climatisation">
+
+            <label for="elec">Sièges électriques</label>
+            <input id="elec" name="options" type="checkbox" value="Sièges électriques">
+
+            <label for="gps">GPS</label>
+            <input id="gps" name="options" type="checkbox" value="GPS">
+        </fieldset>
+
+    </form>
+
+    <button id="buttonBuy">Acheter sans me poser de question ni regret !</button>
+
+    <p></p>
+
+    <fieldset id="resultDiv">
+        <p>Bravo, vous avez acheté une :</p>
+        <p id="makeResult "></p>
+        <p id="modelResult "></p>
+        <p id="colorResult "></p>
+        <p id="optionsResult "></p>
+    </fieldset>
+</body>
+
+<script>
+    const makes = [{
+        name: 'Peugeot',
+        models: [{
+            name: '108',
+            colors: ['Blanc', 'Bleu']
+        }, {
+            name: '208',
+            colors: ['Blanc', 'Rouge', 'Noir', 'Orange']
+        }, {
+            name: '308',
+            colors: ['Jaune', 'Vert', 'Noir']
+        }, {
+            name: '508',
+            colors: ['Blanc', 'Jaune', 'Vert', 'Orange']
+        }]
+    }, {
+        name: 'Renault',
+        models: [{
+            name: 'Twingo',
+            colors: ['Jaune', 'Vert', 'Noir']
+        }, {
+            name: 'Clio',
+            colors: ['Blanc', 'Rouge', 'Noir', 'Orange']
+        }, {
+            name: 'Mégane',
+            colors: ['Blanc', 'Bleu']
+        }, {
+            name: 'Talisman',
+            colors: ['Blanc', 'Jaune', 'Orange']
+        }]
+    }, {
+        name: 'Citroën',
+        models: [{
+            name: 'C1',
+            colors: ['Bleu', 'Rouge', 'Orange']
+        }, {
+            name: 'C3',
+            colors: ['Blanc', 'Vert', 'Noir']
+        }, {
+            name: 'C4',
+            colors: ['Rouge', 'Orange']
+        }, {
+            name: 'C5',
+            colors: ['Blanc', 'Rouge', 'Noir']
+        }]
+    }];
+</script>
+
+</html>
