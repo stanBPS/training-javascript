@@ -1208,6 +1208,29 @@ _Exemple : Une voiture Renault Clio Verte_
 * Attributs : Marque, Modèle, Couleur...
 * Méthodes : Avance, Recule, Allume les phares...
 
+
+--
+
+#### Exemples d'Objets natifs
+
+```javascript
+
+// Dates
+const now = new Date();
+console.log(now.getMonth());                    // Output -> 04
+console.log(now.getFullYear());                 // Output -> 2020
+console.log(now.toISOString());                 // Output -> 2020-04-05T14:11:58.470Z
+
+// Math (méthodes statiques)
+console.log(Math.max(1, 2, 3));                 // Output -> 3
+console.log(Math.cos(5));                       // Output -> 0.28366218546322625
+
+// Number (méthodes statiques)
+console.log(Number.isNaN(123));                 // false
+console.log(Number.isNaN('abc'));               // true
+console.log(Number.parseInt('123', 10));        // 123
+```
+
 --
 
 #### Comment définir un objet en JavaScript ?
@@ -1955,6 +1978,110 @@ console.log([
                                                     //      'name': 'Kiwi',
                                                     //      'quantity': 6
                                                     // }
+```
+
+--
+
+### Passage par référence ou par valeur ?
+
+--
+
+#### Passage par valeur : tous les types primitifs
+
+```javascript
+
+function test(aString) {                // aString est une copie de valeur
+    aString = aString +  ' world!';
+    return aString;
+}
+
+
+let stringA = 'Hello';
+let stringB = test(stringA);
+
+
+console.log(stringA);                    // Output -> Hello
+console.log(stringB);                    // Output -> Hello world!
+```
+
+--
+
+#### Passage par référence : tous les objets
+
+```javascript
+
+function testObject(anObject) {         // anObject est une simple référence
+    anObject.myProp = 'Here is a new value for myProp!';
+    return anObject;
+}
+
+
+function testArray(anArray) {         // anArray est une simple référence
+    anArray.push('Here is a new item!');
+    return anArray;
+}
+
+
+let objA = { myProp: 'myValue' };
+let objB = testObject(objA);
+console.log(objA);                // Output -> { myProp: 'Here is a new value for myProp!' }
+console.log(objB);                // Output -> { myProp: 'Here is a new value for myProp!' }
+
+
+let arrA = ['a', 'b'];
+let arrB = testArray(arrA);
+console.log(arrA);                // Output -> ['a', 'b', 'Here is a new item!']
+console.log(arrB);                // Output -> ['a', 'b', 'Here is a new item!']
+```
+
+Attention ! Les tableaux sont aussi des objets !
+
+--
+
+### Les opérateurs de Décomposition et de Destructuration
+
+--
+
+#### Opérateur de décomposition
+[`spread`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Syntaxe_d%C3%A9composition)
+
+Permet d'étendre un tableau ou un objet en plusieurs arguments
+
+```javascript
+// Fonctionne pour les tableaux
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5, 6];
+console.log(arr2);                          // Output -> [1, 2, 3, 4, 5, 6]
+
+
+// Fonctionne pour les objets (merge)
+const obj1 = { a: 'a' };
+const obj2 = { ...obj1, b: 'b' };
+console.log(obj2);                          // Output -> { a: 'a', b: 'b' }
+```
+
+--
+
+#### Destructuration
+[`destructuring`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition)
+
+Permet d'extraire des données d'un tableau ou d'un objet
+
+```javascript
+const arr = [1, 2, 3, 4, 5, 6];
+const [a, b, c, ...rest] = arr;
+console.log(a);                             // Output -> 1
+console.log(b);                             // Output -> 2
+console.log(c);                             // Output -> 3
+console.log(rest);                          // Output -> [4, 5, 6]
+
+
+// Fonctionne aussi pour les objets
+const obj = { a: 'a', b: 'b', c: 'c', d: 'd' };
+const { a, b, ...rest } = obj;
+console.log(a);                             // a
+console.log(b);                             // b
+console.log(rest);                          // { c: 'c', d: 'd' }
 ```
 
 --

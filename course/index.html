@@ -283,6 +283,7 @@
         <section >
             <h1><a id="user-content-javascript" class="anchor" href="#javascript" aria-hidden="true"></a>Javascript</h1>
 <img src="images/javascript_logo.png" style="height: 200px">
+
             </section>
         
             <section >
@@ -364,6 +365,7 @@ par <a href="https://fr.wikipedia.org/wiki/Brendan_Eich">Brendan Eich</a></p>
 <img src="images/brendan_eich.jpg" style="height: 150px">
 <p>Inspiré par <a href="https://en.wikipedia.org/wiki/Java_(software_platform)">Java</a> mais pour le <a href="https://en.wikipedia.org/wiki/World_Wide_Web">Web</a></p>
 <img src="images/java.png" style="height:75px;">
+
             </section>
         
             <section >
@@ -384,6 +386,7 @@ par <a href="https://fr.wikipedia.org/wiki/Brendan_Eich">Brendan Eich</a></p>
 <p>World Wide Web Consortium <br>
 standardise le Web</p>
 <img src="images/w3c.png">
+
             </section>
         
             <section >
@@ -394,6 +397,7 @@ standardise le Web</p>
             <section >
                 <h4><a id="user-content-initialement-pour-apporter-un-peu-de-dynamicité-aux-pages-html" class="anchor" href="#initialement-pour-apporter-un-peu-de-dynamicité-aux-pages-html" aria-hidden="true"></a>Initialement pour apporter un peu de dynamicité aux pages HTML</h4>
 <img src="images/button.gif" style="height: 200px">
+
             </section>
         
             <section >
@@ -414,6 +418,7 @@ standardise le Web</p>
             <section >
                 <h4><a id="user-content-une-vaste-communauté-et-une-grande-popularité" class="anchor" href="#une-vaste-communauté-et-une-grande-popularité" aria-hidden="true"></a>Une vaste communauté et une grande popularité</h4>
 <img src="images/trend.png" style="height: 500px;">
+
             </section>
         
             <section >
@@ -426,6 +431,7 @@ standardise le Web</p>
 <a href="https://emberjs.com/">Ember</a>,
 …</p>
 <img src="images/jira.png" style="height: 300px">
+
             </section>
         
             <section >
@@ -435,6 +441,7 @@ standardise le Web</p>
 <a href="https://nwjs.io/">Nw.js</a>,
 …</p>
 <img src="images/vscode.png">
+
             </section>
         
             <section >
@@ -444,6 +451,7 @@ standardise le Web</p>
 <a href="https://ionicframework.com/">Ionic</a>,
 …</p>
 <img src="images/airbnb.jpg">
+
             </section>
         
             <section >
@@ -508,6 +516,7 @@ standardise le Web</p>
 <img src="images/compiled.png" style="height: 200px;">
 <p>Interprèté</p>
 <img src="images/interpreted.png" style="height: 200px;">
+
             </section>
         
             <section >
@@ -715,6 +724,7 @@ console.log('Hi!' / 2);                 // Output -&gt; NaN
             <section >
                 <h3><a id="user-content-labs" class="anchor" href="#labs" aria-hidden="true"></a>Labs</h3>
 <img src="images/lab.png">
+
             </section>
         
             <section >
@@ -1419,6 +1429,7 @@ npm install -g jsdoc
 jsdoc myScript.js // Génère la documentation html sous ./out/
 </code></pre>
 <img src="images/jsdoc.png" style="height: 600px">
+
             </section>
         
             <section >
@@ -1483,6 +1494,7 @@ jsdoc myScript.js // Génère la documentation html sous ./out/
             <section >
                 <h3><a id="user-content-labs-1" class="anchor" href="#labs-1" aria-hidden="true"></a>Labs</h3>
 <img src="images/lab.png">
+
             </section>
         
             <section >
@@ -1604,6 +1616,27 @@ Output -&gt; 40
 <li>Attributs : Marque, Modèle, Couleur…</li>
 <li>Méthodes : Avance, Recule, Allume les phares…</li>
 </ul>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-exemples-dobjets-natifs" class="anchor" href="#exemples-dobjets-natifs" aria-hidden="true"></a>Exemples d’Objets natifs</h4>
+<pre><code class="language-javascript">
+// Dates
+const now = new Date();
+console.log(now.getMonth());                    // Output -&gt; 04
+console.log(now.getFullYear());                 // Output -&gt; 2020
+console.log(now.toISOString());                 // Output -&gt; 2020-04-05T14:11:58.470Z
+
+// Math (méthodes statiques)
+console.log(Math.max(1, 2, 3));                 // Output -&gt; 3
+console.log(Math.cos(5));                       // Output -&gt; 0.28366218546322625
+
+// Number (méthodes statiques)
+console.log(Number.isNaN(123));                 // false
+console.log(Number.isNaN('abc'));               // true
+console.log(Number.parseInt('123', 10));        // 123
+</code></pre>
 
             </section>
         
@@ -1771,6 +1804,7 @@ console.log('Hi there!'.boum()); // Output -&gt; Hi there! Boum!
             <section >
                 <h4><a id="user-content-le-chainage-de-prototypes" class="anchor" href="#le-chainage-de-prototypes" aria-hidden="true"></a>Le chainage de prototypes</h4>
 <img src="images/prototype_chaining.png">
+
             </section>
         
             <section >
@@ -1886,6 +1920,7 @@ rex.bark();                         // Output -&gt; Wouaf wouaf!
 </li>
 </ul>
 <img src="images/array.png">
+
             </section>
         
             <section >
@@ -2318,6 +2353,105 @@ console.log([
             </section>
         
             <section >
+                <h3><a id="user-content-passage-par-référence-ou-par-valeur-" class="anchor" href="#passage-par-référence-ou-par-valeur-" aria-hidden="true"></a>Passage par référence ou par valeur ?</h3>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-passage-par-valeur--tous-les-types-primitifs" class="anchor" href="#passage-par-valeur--tous-les-types-primitifs" aria-hidden="true"></a>Passage par valeur : tous les types primitifs</h4>
+<pre><code class="language-javascript">
+function test(aString) {                // aString est une copie de valeur
+    aString = aString +  ' world!';
+    return aString;
+}
+
+
+let stringA = 'Hello';
+let stringB = test(stringA);
+
+
+console.log(stringA);                    // Output -&gt; Hello
+console.log(stringB);                    // Output -&gt; Hello world!
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-passage-par-référence--tous-les-objets" class="anchor" href="#passage-par-référence--tous-les-objets" aria-hidden="true"></a>Passage par référence : tous les objets</h4>
+<pre><code class="language-javascript">
+function testObject(anObject) {         // anObject est une simple référence
+    anObject.myProp = 'Here is a new value for myProp!';
+    return anObject;
+}
+
+
+function testArray(anArray) {         // anArray est une simple référence
+    anArray.push('Here is a new item!');
+    return anArray;
+}
+
+
+let objA = { myProp: 'myValue' };
+let objB = testObject(objA);
+console.log(objA);                // Output -&gt; { myProp: 'Here is a new value for myProp!' }
+console.log(objB);                // Output -&gt; { myProp: 'Here is a new value for myProp!' }
+
+
+let arrA = ['a', 'b'];
+let arrB = testArray(arrA);
+console.log(arrA);                // Output -&gt; ['a', 'b', 'Here is a new item!']
+console.log(arrB);                // Output -&gt; ['a', 'b', 'Here is a new item!']
+</code></pre>
+<p>Attention ! Les tableaux sont aussi des objets !</p>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-les-opérateurs-de-décomposition-et-de-destructuration" class="anchor" href="#les-opérateurs-de-décomposition-et-de-destructuration" aria-hidden="true"></a>Les opérateurs de Décomposition et de Destructuration</h3>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-opérateur-de-décomposition" class="anchor" href="#opérateur-de-décomposition" aria-hidden="true"></a>Opérateur de décomposition</h4>
+<p><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Syntaxe_d%C3%A9composition"><code>spread</code></a></p>
+<p>Permet d’étendre un tableau ou un objet en plusieurs arguments</p>
+<pre><code class="language-javascript">// Fonctionne pour les tableaux
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5, 6];
+console.log(arr2);                          // Output -&gt; [1, 2, 3, 4, 5, 6]
+
+
+// Fonctionne pour les objets (merge)
+const obj1 = { a: 'a' };
+const obj2 = { ...obj1, b: 'b' };
+console.log(obj2);                          // Output -&gt; { a: 'a', b: 'b' }
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-destructuration" class="anchor" href="#destructuration" aria-hidden="true"></a>Destructuration</h4>
+<p><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition"><code>destructuring</code></a></p>
+<p>Permet d’extraire des données d’un tableau ou d’un objet</p>
+<pre><code class="language-javascript">const arr = [1, 2, 3, 4, 5, 6];
+const [a, b, c, ...rest] = arr;
+console.log(a);                             // Output -&gt; 1
+console.log(b);                             // Output -&gt; 2
+console.log(c);                             // Output -&gt; 3
+console.log(rest);                          // Output -&gt; [4, 5, 6]
+
+
+// Fonctionne aussi pour les objets
+const obj = { a: 'a', b: 'b', c: 'c', d: 'd' };
+const { a, b, ...rest } = obj;
+console.log(a);                             // a
+console.log(b);                             // b
+console.log(rest);                          // { c: 'c', d: 'd' }
+</code></pre>
+
+            </section>
+        
+            <section >
                 <h3><a id="user-content-la-gestion-des-erreurs" class="anchor" href="#la-gestion-des-erreurs" aria-hidden="true"></a>La gestion des erreurs</h3>
 
             </section>
@@ -2388,12 +2522,14 @@ try {                   // Le code à protéger est dans un try
             <section >
                 <h3><a id="user-content-labs-2" class="anchor" href="#labs-2" aria-hidden="true"></a>Labs</h3>
 <img src="images/lab.png">
+
             </section>
         
             <section >
                 <h3><a id="user-content-lab0301" class="anchor" href="#lab0301" aria-hidden="true"></a>lab/03/01</h3>
 <h4><a id="user-content-implémenter-une-course-avec-3-partipants-qui-doivent-se-déplacer-sur-une-grille-dun-point-a-à-un-point-b" class="anchor" href="#implémenter-une-course-avec-3-partipants-qui-doivent-se-déplacer-sur-une-grille-dun-point-a-à-un-point-b" aria-hidden="true"></a>Implémenter une course avec 3 partipants qui doivent se déplacer sur une grille d’un point A à un point B.</h4>
 <img src="images/race.png" style="height: 520px;">
+
             </section>
         
             <section >
@@ -2508,6 +2644,7 @@ est une API qui permet au JavaScript d’interragir avec le navigateur</p>
 <p>Le <a href="https://www.w3schools.com/js/js_htmldom.asp">DOM</a> (Document Object Model) <br>
 est l’arbre des objets créés par le navigateur quand une page est chargée</p>
 <img src="images/dom.png" style="height: 480px;">
+
             </section>
         
             <section >
@@ -2516,6 +2653,7 @@ est l’arbre des objets créés par le navigateur quand une page est chargée</
 est une super API du
 <a href="https://www.w3schools.com/js/js_htmldom.asp">DOM</a></p>
 <img src="images/bom.png">
+
             </section>
         
             <section >
@@ -2706,6 +2844,7 @@ function foo() {
 foo();
 </code></pre>
 <img src="images/loop1.png">
+
             </section>
         
             <section >
@@ -2993,6 +3132,7 @@ des données provenant de l’utilisateur</p>
 <p>Il contient des <a href="https://www.w3schools.com/tags/tag_label.asp">libellés</a>
 et des <a href="https://www.w3schools.com/html/html_form_elements.asp">contrôles</a></p>
 <img src="images/form.png" height="400px">
+
             </section>
         
             <section >
@@ -3034,6 +3174,7 @@ et des <a href="https://www.w3schools.com/html/html_form_elements.asp">contrôle
         <input type="text" name="input1" value="Hello!">
     </div>    
 </pre>
+
             </section>
         
             <section >
@@ -3063,6 +3204,7 @@ et des <a href="https://www.w3schools.com/html/html_form_elements.asp">contrôle
         <label for="input1Id">I can also trigger the text input!</label>
     </div>    
 </pre>
+
             </section>
         
             <section >
@@ -3093,6 +3235,7 @@ et des <a href="https://www.w3schools.com/html/html_form_elements.asp">contrôle
         <input type="password" value="secret">
     </div>
 </pre>
+
             </section>
         
             <section >
@@ -3117,6 +3260,7 @@ et des <a href="https://www.w3schools.com/html/html_form_elements.asp">contrôle
         </select>
     </div>
 </pre>
+
             </section>
         
             <section >
@@ -3134,6 +3278,7 @@ Line4
         <textarea rows="4" cols="30">Line1&#13;&#10;Line2&#13;&#10;Line3&#13;&#10;Line4</textarea>
     </div>
 </pre>
+
             </section>
         
             <section >
@@ -3190,6 +3335,7 @@ Line4
         <input type="text" onkeyup="alert('Key is ' + event.keyCode)">
     </div>
 </pre>
+
             </section>
         
             <section >
@@ -3221,6 +3367,7 @@ Seuls les contrôles possédant un attribut <code>name</code> sont envoyés <br>
             <section >
                 <h3><a id="user-content-labs-3" class="anchor" href="#labs-3" aria-hidden="true"></a>Labs</h3>
 <img src="images/lab.png">
+
             </section>
         
             <section >
@@ -3281,6 +3428,7 @@ function foo() {
 foo();
 </code></pre>
 <img src="images/loop2.png">
+
             </section>
         
             <section >
@@ -3675,6 +3823,7 @@ async function foo() {
 <p>API permettant de récupérer des ressources via le protocole HTTP</p>
 <p>C’est la version moderne de <code>XMLHttpRequest</code> (AJAX)</p>
 <img src="images/fetch.png" height="300px;">
+
             </section>
         
             <section >
@@ -3757,6 +3906,7 @@ myImage.src = flowersObjectURL;
             <section >
                 <h3><a id="user-content-labs-4" class="anchor" href="#labs-4" aria-hidden="true"></a>Labs</h3>
 <img src="images/lab.png">
+
             </section>
         
             <section >
